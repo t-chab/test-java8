@@ -52,5 +52,6 @@ class Step2 {
 
         System.out.println("Total number of letters : ");
         System.out.println(Arrays.stream(firstnames).map(String::length).reduce(0, Integer::sum));
+
     }
 }
