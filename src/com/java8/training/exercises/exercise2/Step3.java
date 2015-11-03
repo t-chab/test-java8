@@ -40,8 +40,8 @@ class ElementUtils {
 }
 
 class Car {
-    private String name;
-    private float price;
+    private final String name;
+    private final float price;
 
     public Car(String pName, float pPrice) {
         name = pName;
