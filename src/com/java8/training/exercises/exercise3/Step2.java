@@ -20,6 +20,7 @@ class StreamUtils {
                 .limit(size)
                 .collect(Collectors.toList());
     }
+
 }
 
 class Step2 {
@@ -48,5 +49,8 @@ class Step2 {
         int size = 20;
         System.out.println("List of " + size + " numbers from " + start + " with " + step + " increments.");
         System.out.println(StreamUtils.orderedNumberList(start, step, size));
+
+        System.out.println("Total number of letters : ");
+        System.out.println(Arrays.stream(firstnames).map(String::length).reduce(0, Integer::sum));
     }
 }
