@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created on 03/11/2015.
  */
-public class Step4 {
+class Step4 {
 
     public static void main(String[] args) {
 
@@ -21,7 +21,7 @@ public class Step4 {
     System.out.println("Words that contains " + letter + ": " + wordsWithLetter);
 
     List<String> evenLengthWords = StringUtils.allMatches(words, s -> (s.length()
-        % 2) == 0);
+            % 2) == 0);
     System.out.println("Even length words : " + evenLengthWords);
 
     List<Integer> nums = Arrays.asList(1, 10, 100, 1000, 10000);

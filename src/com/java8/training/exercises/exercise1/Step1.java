@@ -2,7 +2,7 @@ package com.java8.training.exercises.exercise1;
 
 import java.util.Arrays;
 
-public class Step1 {
+class Step1 {
 
     private final Runnable r = () -> System.out.println("Hello world");
 

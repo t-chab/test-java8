@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created on 03/11/2015.
  */
-public class Step5 {
+class Step5 {
 
     public static void main(String[] args) {
         List<String> words = Arrays.asList("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "blob", "parrot", "elephant");

@@ -1,12 +1,12 @@
 package com.java8.training.exercises.exercise5;
 
-import java.util.Date;
 import java.time.*;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.TemporalQuery;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -54,7 +54,7 @@ class Superstitious {
     }
 }
 
-public class Step2 {
+class Step2 {
 
     public static void main(String[] args) {
         System.out.println("Exercise5.Step2.main()");
