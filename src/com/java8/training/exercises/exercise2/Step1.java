@@ -48,7 +48,7 @@ class StringUtils {
 /**
  * Created on 03/11/2015.
  */
-public class Step1 {
+class Step1 {
 
     public static void main(String[] args) {
         String[] strArray = {"Nicolas", "Thierry", "Jaouad", "Thomas", "Eric", "Thierry", "Philippe"};

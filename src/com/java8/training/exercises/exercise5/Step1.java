@@ -6,7 +6,7 @@ import java.time.temporal.TemporalAdjusters;
 /**
  * Created on 02/11/2015.
  */
-public class Step1 {
+class Step1 {
 
     public static void main(String [] args) {
 

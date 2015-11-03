@@ -11,7 +11,7 @@ interface Defaultable {
 /**
  * Created by 02/11/2015.
  */
-public class Step4 {
+class Step4 {
 
     public static void main(String args[]) {
         System.out.println("exercise1.Step4.main()");

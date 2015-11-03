@@ -18,7 +18,7 @@ class Plop implements Formatter {
     }
 }
 
-public class Step3 {
+class Step3 {
     public static void main(String[] args) {
         final String[] strString = {"Nicolas", "Thierry", "Jaouad", "Thomas", "Eric", "Thierry", "Philippe"};
 

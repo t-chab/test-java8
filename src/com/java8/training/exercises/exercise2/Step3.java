@@ -65,7 +65,7 @@ class Car {
 /**
  * Created on 03/11/2015.
  */
-public class Step3 {
+class Step3 {
 
     public static void main(String[] args) {
         Car car1 = new Car("VW Polo", 2000);

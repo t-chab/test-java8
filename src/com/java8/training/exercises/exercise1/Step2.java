@@ -3,7 +3,7 @@ package com.java8.training.exercises.exercise1;
 /**
  * Created on 02/11/2015.
  */
-public class Step2 {
+class Step2 {
 
     public static void main(String args[]) {
         System.out.println("exercise1.Step2.main()");
