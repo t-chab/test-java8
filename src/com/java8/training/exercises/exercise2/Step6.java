@@ -29,10 +29,12 @@ class FunctionUtils {
 public class Step6 {
 
     public static void main(String[] args) {
-        List<String> words = Arrays.asList("one", "olofolous", "two", "three", "four", "five", "six", "seven", "eight", "nine", "blob", "parrot", "elephant");
+        List<String> words = Arrays.asList("one", "olofolous", "two", "three", "four", "five", "six",
+                "seven", "eight", "nine", "blob", "parrot", "elephant");
 
         System.out.println("Words: " + words);
-        System.out.println("First word containing 'o' and longer than 5: " + FunctionUtils.firstAllMatch(words.stream(), s -> s.contains("o"), s -> s.length() > 5));
+        System.out.println("First word containing 'o' and longer than 5: " + FunctionUtils.firstAllMatch(words.stream(),
+                s -> s.contains("o"), s -> s.length() > 5));
 
     }
 }
