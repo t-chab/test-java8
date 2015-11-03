@@ -53,5 +53,11 @@ class Step2 {
         System.out.println("Total number of letters : ");
         System.out.println(Arrays.stream(firstnames).map(String::length).reduce(0, Integer::sum));
 
+        List<Double> doubles = StreamUtils.randomNumberList(n);
+        double product = doubles.stream().reduce(1.0, (r1, r2) -> r1 * r2);
+        System.out.println("Sequential product=" + product);
+        double productParallel = doubles.stream().parallel().reduce(1.0, (r1, r2) -> r1 * r2);
+        System.out.println("Parallel   product=" + productParallel);
+
     }
 }
