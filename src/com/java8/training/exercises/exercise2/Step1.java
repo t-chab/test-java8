@@ -3,6 +3,7 @@ package com.java8.training.exercises.exercise2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 
 @FunctionalInterface
 interface TwoStringPredicate {
@@ -30,6 +31,15 @@ class StringUtils {
             if(predicate.match(w)) {
                 lList.add(w);
             }
+        }
+        return  lList;
+    }
+
+    public static List<String> transformedList(List<String> words, Function<String, String> f) {
+        List<String> lList = new ArrayList<>();
+        for(String w : words) {
+            final String modified = f.apply(w);
+            lList.add(modified);
         }
         return  lList;
     }

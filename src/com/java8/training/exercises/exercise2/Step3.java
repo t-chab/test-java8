@@ -2,6 +2,7 @@ package com.java8.training.exercises.exercise2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 @FunctionalInterface
 interface TwoElementPredicate<T> {
@@ -26,6 +27,15 @@ class ElementUtils {
             }
         }
         return  lList;
+    }
+
+    public static <T, R> List<R> transformedList(List<T> elements, Function<T, R> f) {
+        List<R> lList = new ArrayList<>();
+        for(T element : elements) {
+            R result = f.apply(element);
+            lList.add(result);
+        }
+        return lList;
     }
 }
 

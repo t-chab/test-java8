@@ -24,7 +24,6 @@ public class Step4 {
         % 2) == 0);
     System.out.println("Even length words : " + evenLengthWords);
 
-
     List<Integer> nums = Arrays.asList(1, 10, 100, 1000, 10000);
     System.out.println("Nums : " + nums);
     List<Integer> bigNums = ElementUtils.allMatches(nums, n -> n>500);
