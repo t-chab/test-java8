@@ -24,7 +24,7 @@ class Step2 {
         t3.start();
     }
 
-    static void doWork() {
+    private static void doWork() {
         final String name = Thread.currentThread().getName();
         for (int i = 0; i < 50; i++) {
             System.out.println(name);

@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 class Step1 {
     private final static String SEPARATOR = "------------------------------------------------------";
 
-    public static String searchFor(Stream<String> st, String str) {
+    private static String searchFor(Stream<String> st, String str) {
         return st.map(String::toUpperCase)
                 .filter(s -> s.length() <= 4)
                 .filter(t -> t.contains(str))

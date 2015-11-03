@@ -34,7 +34,7 @@ class Step3 {
         Arrays.asList(strString);
     }
 
-    static void forEach(final List<String> list, Formatter f) {
+    private static void forEach(final List<String> list, Formatter f) {
         for (String s : list) {
             System.out.println(f.format("\t%s\n", s));
         }
