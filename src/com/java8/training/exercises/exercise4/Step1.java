@@ -51,6 +51,14 @@ class WordUtils {
 
 }
 
+class FolderUtils {
+    public static long numPathsInTree(final String folderName) throws IOException {
+        Path folderPath = Paths.get(folderName);
+        Stream<Path> paths = Files.walk(folderPath);
+        return paths.count();
+    }
+}
+
 class Step1 {
 
     private static final String PATH_PREFIX = "W:\\";
@@ -87,5 +95,7 @@ class Step1 {
         final String outFile = PATH_PREFIX + "twitter-words.txt";
         WordUtils.storeTwitterList(fullFileName, outFile);
         System.out.println("File " + outFile + " written.");
+
+        System.out.println("There are  " + FolderUtils.numPathsInTree(PATH_PREFIX) + " files in directory " + PATH_PREFIX);
     }
 }
