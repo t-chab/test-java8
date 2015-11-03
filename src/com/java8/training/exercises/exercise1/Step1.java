@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Step1 {
 
-    protected Runnable r = () -> System.out.println("Hello world");
+    private final Runnable r = () -> System.out.println("Hello world");
 
     public static void main(String args[]) {
         System.out.println("exercise1.Step1.main()");
@@ -16,8 +16,8 @@ public class Step1 {
         final String[] strString = {"Nicolas", "Thierry", "Jaouad", "Thomas", "Eric", "Thierry", "Philippe"};
 
         Arrays.sort(strString, (p1, p2) -> p1.length() - p2.length());
-        for (int i = 0; i < strString.length; i++) {
-            System.out.println(strString[i]);
+        for (String str : strString) {
+            System.out.println(str);
         }
     }
 
