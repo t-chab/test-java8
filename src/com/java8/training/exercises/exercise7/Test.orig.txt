@@ -1,0 +1,100 @@
+package com.java8.training.exercises.exercise7;
+
+/**
+ * Created on 04/11/2015.
+ */
+
+import java.util.*;
+
+class Employee {
+    private String name;
+    private double wage;
+
+    protected Employee(String name, double wage) {
+        this.name = name;
+        this.wage = wage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getWage() {
+        return wage;
+    }
+}
+
+class EmployeeException extends Exception {
+    private Employee emp;
+
+    public EmployeeException(String message, Employee emp) {
+        super(message);
+        this.emp = emp;
+    }
+}
+
+class Enterprise implements Iterable<Employee> {
+    private String name;
+    private ArrayList<Employee> employees;
+
+    public Enterprise(String nom) {
+        this.name = nom;
+        employees = new ArrayList<Employee>();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void add(Employee emp) throws EmployeeException {
+        if (!employees.add(emp)) {
+            throw new EmployeeException("Employee is already in this company", emp);
+        }
+    }
+
+    @Override
+    public Iterator<Employee> iterator() {
+        return employees.iterator();
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer(name);
+        for (Employee employe : employees) {
+            sb.append("\n " + employe.getName());
+        }
+        return sb.toString();
+    }
+}
+
+class CompareWage implements Comparator<Employee> {
+    public int compare(Employee e1, Employee e2) {
+        return Double.compare(e1.getWage(), e2.getWage());
+    }
+}
+
+public class TestOrig {
+    public static void main(String[] args) throws EmployeeException {
+        Enterprise e1 = new Enterprise("LO");
+        e1.add(new Employee("Cyril", 5000));
+        e1.add(new Employee("Laurent", 6000));
+        e1.add(new Employee("Rima", 5700));
+        e1.add(new Employee("Victorien", 4300));
+        System.out.println(e1);
+
+        // Fill list with employees
+        List<Employee> l = new ArrayList<>();
+        for (Employee e : e1) {
+            l.add(e);
+        }
+        // Sort by ascending wage
+        CompareWage comparator = new CompareWage();
+        Collections.sort(l, comparator);
+        System.out.println("Employee " + e1.getName()
+                + " wage by ascending order");
+        for (Employee employee : l) {
+            System.out.println(employee.getName() + " wins "
+                    + employee.getWage());
+        }
+    }
+}
