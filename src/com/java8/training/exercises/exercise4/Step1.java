@@ -2,9 +2,12 @@ package com.java8.training.exercises.exercise4;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
@@ -59,6 +62,22 @@ class FolderUtils {
     }
 }
 
+class WritingUtils {
+    public static void writeNums(final String fileName, final int size) {
+        Path outputPath = Paths.get(fileName);
+
+        try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(outputPath, Charset.defaultCharset()))) {
+            Stream data = Stream.generate(() -> (Math.random() * 100000) / 1000)
+                    .limit(size).map(String::valueOf)
+                    .distinct();
+            data.forEach(v -> writer.append(v.toString()).append('\n'));
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            System.err.println(Arrays.toString(e.getStackTrace()));
+        }
+    }
+}
+
 class Step1 {
 
     private static final String PATH_PREFIX = "W:\\";
@@ -97,5 +116,9 @@ class Step1 {
         System.out.println("File " + outFile + " written.");
 
         System.out.println("There are  " + FolderUtils.numPathsInTree(PATH_PREFIX) + " files in directory " + PATH_PREFIX);
+
+        final String sampleFile = PATH_PREFIX + "plop.txt";
+        WritingUtils.writeNums(sampleFile, 42);
+        System.out.println("File " + sampleFile + " written");
     }
 }
